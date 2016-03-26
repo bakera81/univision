@@ -18,6 +18,7 @@ from django.contrib import admin
 from Univision_app import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
+    url(r'^users/', views.users, name='users'),
+    url(r'^admin/', admin.site.urls),
 ]

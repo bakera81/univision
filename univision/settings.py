@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%qks#j%j0d_v#5vi@^9h61u$#%^c#y#4i9qqqfpi&!=l8vo(ex'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -79,6 +79,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'univision_email',
+	'TEST':{'NAME':'test_univision_email'},
         'USER': 'univision_admin',
         'PASSWORD': 'fXqTw*KY',
         'HOST': 'mysql.anthonywbaker.com',

@@ -6,31 +6,39 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-      <link href='https://fonts.googleapis.com/css?family=Petit+Formal+Script' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" href={% static "css/custom.css" %}>
+     <link rel="stylesheet" href={% static "css/custom.css" %}>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <title>UNIVISION</title>
     </head>
     <body>
      <div class="container-fluid">
-     <div class="row">
-     <div class="col-md-4"></div>
-     <div class="col-md-4">
-      <div class="contain">
-      <h1 id="title">UNIVISION:</h1>
-      <p class="tagline">The premeire place to share unicorn sightings and stories online.</p>
-        <form action="/" method="post">
-         {% csrf_token %}
-          {{ form }}
-          <input type="submit" value="Sign Up" class="btn btn-default"/>
-        </form>
+      <h1>All Users</h1>
+        {% csrf_token %}
 	<div class="row">
-	  <p>{{msg}}</p>
+          <div class="col-md-4">
+	    <h4>Email</h4>
+          </div>
+	  <div class="col-md-4">
+            <h4>Name</h4>
+	  </div>
+	  <div class="col-md-4">
+	    <h4>Date Signed Up</h4>
+          </div>
 	</div>
-	</div>
-	</div>
-       <div class="col-md-4"></div>
-      </div>
+        {% for usr in usrs %}        
+          <div class="row">
+            <div class="col-md-4">
+	      <p>{{usr.email}}</p>
+	    </div>
+	    <div class="col-md-4">
+              <p>{{usr.name}}</p>
+            </div>
+            <div class="col-md-4">
+ 	      <p>{{usr.datecreated}}</p>
+            </div>
+          </div>
+	{% endfor %}
       </div><!--container-fluid-->
     </body>
 </html>

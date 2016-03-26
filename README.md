@@ -1,5 +1,5 @@
 # univision
-A place for Unicorn enthusiasts to share stories.
+A place for Unicorn enthusiasts to share stories. Not affiliated with the spanish language broadcast television network.
 
 ###USAGE
 * add users: univision.anthonywbaker.com

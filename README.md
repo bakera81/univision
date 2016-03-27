@@ -6,6 +6,7 @@ A place for Unicorn enthusiasts to share stories. Not affiliated with the spanis
 * JQuery
 * Bootstrap 3
 * Google Fonts
+
 #####BACK END
 * MySQL
 * Django 1.9
@@ -15,6 +16,9 @@ A place for Unicorn enthusiasts to share stories. Not affiliated with the spanis
 * add users: univision.anthonywbaker.com
 * view users: univision.anthonywbaker.com/users/
 * manage users: univision.anthonywbaker.com/admin/  (Default Django Admin site. User: antbak4 Password: tyjhvG7d)
+
+###FILE STRUCTURE
+* 
 
 ###IMPROVEMENTS
 The following are things that I would like to implement but I ran out of time:

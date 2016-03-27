@@ -11,6 +11,7 @@ A place for Unicorn enthusiasts to share stories. Not affiliated with the spanis
 * MySQL
 * Django 1.9
 * Python 2.7
+* Passenger/Apache
 
 ###USAGE
 * add users: univision.anthonywbaker.com

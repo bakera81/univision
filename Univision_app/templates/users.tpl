@@ -14,31 +14,29 @@
     <body>
      <div class="container-fluid">
       <h1>All Users</h1>
-        {% csrf_token %}
-	<div class="row">
-          <div class="col-md-4">
-	    <h4>Email</h4>
-          </div>
-	  <div class="col-md-4">
-            <h4>Name</h4>
-	  </div>
-	  <div class="col-md-4">
-	    <h4>Date Signed Up</h4>
-          </div>
-	</div>
-        {% for usr in usrs %}        
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-xs-4">
+	     <h3><a href="{% url 'Univision_app.views.email' %}">EMAIL</a></h3>
+	      <hr>
+	      {% for usr in usrs %}
 	      <p>{{usr.email}}</p>
+	      {% endfor %}
 	    </div>
-	    <div class="col-md-4">
+	    <div class="col-xs-4 hidden-xs">
+	      <h3><a href="{% url 'Univision_app.views.name' %}">NAME</a></h3>
+	      <hr>
+	      {% for usr in usrs %}
               <p>{{usr.name}}</p>
+	      {% endfor %}
             </div>
-            <div class="col-md-4">
+            <div class="col-xs-4 hidden-xs">
+	      <h3><a href="{% url 'Univision_app.views.users' %}">DATE</a></h3>
+	      <hr>
+	      {% for usr in usrs %}
  	      <p>{{usr.datecreated}}</p>
+	      {% endfor %}
             </div>
           </div>
-	{% endfor %}
-      </div><!--container-fluid-->
+	</div><!--container-fluid-->
     </body>
 </html>

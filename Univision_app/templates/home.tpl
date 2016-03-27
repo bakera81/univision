@@ -10,7 +10,8 @@
       <link rel="stylesheet" href={% static "css/custom.css" %}>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    </head>
+      <title>UNIVISION</title> 
+   </head>
     <body>
      <div class="container-fluid">
      <div class="row">
@@ -18,7 +19,7 @@
      <div class="col-md-4">
       <div class="contain">
       <h1 id="title">UNIVISION:</h1>
-      <p class="tagline">The premeire place to share unicorn sightings and stories online.</p>
+      <p class="tagline">The premier place to share unicorn sightings and stories online.</p>
         <form action="/" method="post">
          {% csrf_token %}
           {{ form }}

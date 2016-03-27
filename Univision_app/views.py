@@ -6,6 +6,8 @@ from django.core.validators import validate_email
 from django.db import IntegrityError
 from django import forms
 
+CHOICES = ('email', 'name', 'date')
+
 def home(request):
     
     msg = ''
@@ -38,5 +40,16 @@ def home(request):
     return render(request, 'home.tpl', {'form':form, 'msg':msg})
 
 def users(request):
+
     usrs = User.objects.all()
-    return render(request, 'users.tpl', {'usrs':usrs})
+    return render(request, 'users.tpl', {'usrs':usrs, 'choices':CHOICES})
+
+def email(request):
+    
+    usrs = User.objects.all().order_by('email')
+    return render(request, 'users.tpl', {'usrs':usrs, 'choices':CHOICES})
+
+def name(request):
+    
+    usrs = User.objects.all().order_by('name')
+    return render(request, 'users.tpl', {'usrs':usrs, 'choices':CHOICES})

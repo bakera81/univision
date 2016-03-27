@@ -7,6 +7,7 @@ class UserTestCase(TestCase):
     
     def setUp(self):
         User.objects.create(name='Tony the Tiger', email='tony@tony.com', datecreated=datetime.datetime.now())
+	User.objects.create(name='Zed', email='a@a.com', datecreated=datetime.datetime.now())
 
     def test_DB_access(self):
         """
@@ -14,6 +15,16 @@ class UserTestCase(TestCase):
         """
 	tony = User.objects.filter(email='tony@tony.com')
 	self.assertEqual('Tony the Tiger', tony[0].name)
+
+    def test_sort(self):
+	"""
+	Testing sorting DB objects
+	"""
+	sort = User.objects.all().order_by('email')
+	self.assertEqual('a@a.com', sort[0].email)
+
+	sort = sort.order_by('name')
+	self.assertEqual('Tony the Tiger', sort[0].name)
 
     def test_urls(self):
 	"""
@@ -27,6 +38,12 @@ class UserTestCase(TestCase):
 	self.assertEqual(response.status_code, 200)
 	
 	response = client.get('/users/')
+	self.assertEqual(response.status_code, 200)
+
+	response = client.get('/users/name/')
+	self.assertEqual(response.status_code, 200)
+
+	response = client.get('/users/email/')
 	self.assertEqual(response.status_code, 200)
 
 	response = client.get('/admin/')

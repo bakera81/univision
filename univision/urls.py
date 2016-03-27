@@ -18,7 +18,10 @@ from django.contrib import admin
 from Univision_app import views
 
 urlpatterns = [
-    url(r'^$', views.home, name='home'),
-    url(r'^users/', views.users, name='users'),
+    url(r'^users/date/', 'Univision_app.views.users', name='users'), #the default is sorted by date
+    url(r'^users/email/', 'Univision_app.views.email', name='email'),
+    url(r'^users/name/', 'Univision_app.views.name', name='name'),
+    url(r'^users/', 'Univision_app.views.users', name='users'),
+    url(r'^$', 'Univision_app.views.home', name='home'),
     url(r'^admin/', admin.site.urls),
 ]
